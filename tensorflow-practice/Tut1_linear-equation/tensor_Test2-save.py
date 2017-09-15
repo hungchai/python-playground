@@ -57,7 +57,7 @@ sess = tf.InteractiveSession()
 sess.run(init)
 saver = tf.train.Saver()
   
-print matplotlib.rcParams['backend']
+print(matplotlib.rcParams['backend'])
 
 # 為了可以可視化我們訓練的結果
 # fig = plt.figure()

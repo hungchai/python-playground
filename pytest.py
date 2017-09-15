@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 
 labels=np.arange(20)
 #print(labels[:,np.newaxis])

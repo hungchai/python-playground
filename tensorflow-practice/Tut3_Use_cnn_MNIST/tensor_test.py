@@ -1,8 +1,8 @@
 #-*- coding: utf-8 -*-　
 #引用函數
-from __future__ import absolute_import
-from __future__ import division
-from __future__ import print_function
+# from __future__ import absolute_import
+# from __future__ import division
+# from __future__ import print_function
 # Import data
 from tensorflow.examples.tutorials.mnist import input_data
 import tensorflow as tf
@@ -31,6 +31,7 @@ train_step = tf.train.GradientDescentOptimizer(0.5).minimize(cross_entropy)
 # 開始訓練囉~
 tf.global_variables_initializer().run()
 for i in range(1000):
+  print(i)
   batch_xs, batch_ys = mnist.train.next_batch(100)
   #把我們剛剛設定的placeholder 開始丟資料進去
   train_step.run({x: batch_xs, y_: batch_ys})
