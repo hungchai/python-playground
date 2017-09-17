@@ -11,7 +11,7 @@ def compute_accuracy(v_xs, v_ys):
     global prediction
     print("i am here2")
     y_pre = sess.run(prediction, feed_dict={xs: v_xs, keep_prob: 1})
-    print(y_pre);
+    #print(y_pre);
     correct_prediction = tf.equal(tf.argmax(y_pre,1), tf.argmax(v_ys,1))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
     result = sess.run(accuracy, feed_dict={xs: v_xs, ys: v_ys, keep_prob: 1})
@@ -99,7 +99,7 @@ for i in range(10000):
     print(i)
 
     sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
-    if i % 10 ==0 and i > 0:
+    if i % 50 ==0 and i > 0:
         #y_pre = sess.run(prediction, feed_dict={xs:mnist.test.images, keep_prob: 0.5})
         #print(y_pre)
         print(compute_accuracy(mnist.test.images, mnist.test.labels))
