@@ -100,6 +100,6 @@ for i in range(10000):
 
     sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
     if i % 50 ==0 and i > 0:
-        #y_pre = sess.run(prediction, feed_dict={xs:mnist.test.images, keep_prob: 0.5})
-        #print(y_pre)
+        y_pre = sess.run(prediction, feed_dict={xs:mnist.test.images, keep_prob: 0.5})
+        print(y_pre)
         print(compute_accuracy(mnist.test.images, mnist.test.labels))
